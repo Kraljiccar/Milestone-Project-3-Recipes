@@ -1,18 +1,25 @@
 import os
-
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import (
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 import bcrypt
-from os import path
-if path.exists("env.py"):
-  import env 
+
+if os.path.exists("env.py"):
+    import env
+
+
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'Recipe'
-app.config["MONGO_URI"] = os.getenv("MONGO_URI", "mongodb://localhost")
-app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 
+
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
+
+mongo = PyMongo(app)
 
 
 
@@ -22,36 +29,29 @@ app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
 def index_recipe():
     return render_template('index.html')
 
-@app.route('/register')
+@app.route('/register', methods=['POST', 'GET'])
 def register():
-    
-    if 'username' in session:
-        return redirect(url_for('index'))
-
-    form = RegisterForm()
+   
     if request.method == 'POST':
         users = mongo.db.users
-        existing_user = users.find_one({'name': request.form['username']})
-
+        existing_user = users.find_one({'username':
+                                        request.form.get('username').lower()})
         if existing_user is None:
-            hashpass = bcrypt.hashpw(request.form['password'].encode('utf-8'),
-                                     bcrypt.gensalt())
-# generate password hash
-            users.insert({'name': request.form['username'],
-                          'password': hashpass})
+            hash_password = bcrypt.hashpw(
+                request.form['pasword'].encode('utf-8'), bcrypt.gensalt())
+            users.insert_one({'username': request.form['username'],
+                             'password': hash_password})
             session['username'] = request.form['username']
-            # User is now successfully logged in
-            session['username'] = request.form['username']
-            flash('User creation successful!')
-            return redirect(url_for('index'))
+            return redirect(url_for('index_recipe'))
+        
+    return render_template('register.html', login_page=True)
 
-        flash('That username already exists!')
 
-    return render_template('register.html', form=form)
-
-@app.route('/login')
+@app.route('/login', methods=['POST', 'GET'])
 def login():
-    return render_template('login.html')
+   
+    return render_template('login.html', login_page=True)
+
 
 
 if __name__ == '__main__':
