@@ -1,32 +1,11 @@
-html,
-body {
-    height: 100%;
-}
-html {
-    display: table;
-    margin: auto;
-}
-body {
-    display: table-cell;
-    vertical-align: middle;
-    background: rgb(253, 185, 68);
-}
+/* Login / Register styling */
+.login-form {
+  padding-top: 5%;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto; }
 
-#login-page {
-   width: 500px;
-}
-
-#register-page {
-   width: 500px;
-}
-
-.card {
-   position: absolute;
-     left: 50%;
-     top: 50%;
-     -moz-transform: translate(-50%, -50%)
-     -webkit-transform: translate(-50%, -50%)
-     -ms-transform: translate(-50%, -50%)
-     -o-transform: translate(-50%, -50%)
-     transform: translate(-50%, -50%); */
-}
+.container {
+  background-color: #BC0301;
+  color: #FF6E68;
+  height: 100%; }
