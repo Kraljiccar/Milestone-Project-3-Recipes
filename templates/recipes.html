@@ -2,17 +2,18 @@
 {% block content %} 
 
         <h2> {{ page_title }} </h2>
-       
+ <div class="row">       
         {% for recipe in recipes %}
-         <div class="row">
+        
     <div class="col-sm-6 col-md-4">
+    <a href="{{url_for('get_recipe', recipes_id=recipe_id)}}">
       <div class="card">
         <div class="card-image">
-         <a href="{{url_for('get_recipe', recipe_id=recipe_id)}}">
+         
           <img src="{{recipe.img_url}}">
           <span class="card-title">{{recipe.recipe_name}}</span>
         </div>
-        </a>
+        
         <div class="card-content">
           <p>{{recipe.recipe_desciption}}</p>
         </div>
@@ -20,6 +21,7 @@
           <a href="#">This is a link</a>
         </div>
       </div>
+      </a>
     </div>
   </div>
   

@@ -2,7 +2,7 @@
 {% block content %} 
         {% for recipe in recipes %}
 <h2>{{recipe.recipe_name}}</h2>
- {{recipe.category_name}}
- 
+ {{recipe.recipe_name}}
+ {{recipe.recipe_description}}
 {% endfor %}
 {% endblock %}
