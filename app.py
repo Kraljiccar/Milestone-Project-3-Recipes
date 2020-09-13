@@ -27,16 +27,22 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html", recipes=mongo.db.recipe.find())
+@app.route('/recipes/<category>')
+def get_all(category):
+    if category == "all":
+        category = "All recipes"
+        recipes=mongo.db.recipe.find() 
+    elif category == "other":
+        recipe = mongo.db.recipe.find({"category_name": "Other"})
+    else:
+        recipe = mongo.db.recipe.find({"$text": {"$search": category}})
+    return render_template("recipes.html", recipe=recipe, page_title=category)
     
 
-
-#displaying recepi page
-@app.route('/view_recipe')
-def recipe():
-    return render_template('view_recepi.html',)
+@app.route('/view_recipe/<recipe_id>')
+def get_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('viewrecipe.html')
 
 
 
