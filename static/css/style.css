@@ -1,11 +1,4 @@
-/* Login / Register styling */
-.login-form {
-  padding-top: 5%;
-  width: 100%;
-  max-width: 330px;
-  margin: 0 auto; }
-
-.container {
-  background-color: #BC0301;
-  color: #FF6E68;
-  height: 100%; }
+.card-image{
+    width:250px;
+    height:250px;
+}

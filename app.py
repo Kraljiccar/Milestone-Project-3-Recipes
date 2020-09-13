@@ -22,11 +22,23 @@ mongo = PyMongo(app)
 
 
 
+
 @app.route('/')
-#displaying main page
+def index():
+    return render_template("index.html")
+
 @app.route('/recipes')
-def index_recipe():
-    return render_template('index.html')
+def recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipe.find())
+    
+
+
+#displaying recepi page
+@app.route('/view_recipe')
+def recipe():
+    return render_template('view_recepi.html',)
+
+
 
 
 if __name__ == '__main__':
