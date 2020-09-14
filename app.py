@@ -20,20 +20,11 @@ mongo = PyMongo(app)
 def index():
     return render_template("index.html")
 
-@app.route('/recipes/<category>')
-def get_all(category):
-    if category == "all":
-        category = "All recipes"
-        recipe = mongo.db.recipe.find() 
-    else:
-        recipe = mongo.db.recipe.find({"$text": {"$search": category}})
-    return render_template("recipes.html", recipe=recipe, page_title=category)
-    
-@app.route('/recipe/<recipe_id>')
-def get_recipe(recipe_id):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    categories = mongo.db.categories.find()
-    return render_template("viewrecipe.html", recipes=recipes, categories=categories)
+@app.route('/recipes/')
+def recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipe.find())
+
+
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -44,7 +35,7 @@ def add_recipe():
 def insert_recipe():
     recipe = mongo.db.recipe
     recipe.insert_one(request.form.to_dict())
-    return render_template('recipes.html')
+    return render_template(url_for('recipes'))
 
 
 if __name__ == '__main__':
