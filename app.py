@@ -25,7 +25,7 @@ def get_all(category):
     if category == "main":
         recipes = mongo.db.recipe.find({"category_name": "Main"})
     elif category == "appetizers":
-        recipes = mongo.db.recipe.find({"category_name": "Appetizer"})
+        recipes = mongo.db.recipe.find({"category_name": "Appetizers"})
     elif category == "desserts":
         recipes = mongo.db.recipe.find({"category_name": "Dessert"})
     else:
@@ -48,7 +48,7 @@ def add_recipe():
 def insert_recipe():
     recipe = mongo.db.recipe
     recipe.insert_one(request.form.to_dict())
-    return render_template(url_for('recipes'))
+    return render_template("index.html")
 
 
 if __name__ == '__main__':

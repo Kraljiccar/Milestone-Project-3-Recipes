@@ -1,8 +1,35 @@
 {% extends 'base.html' %}
 {% block content %} 
-        
+
+<div class="recipe-headline">
 <h2>{{recipe.recipe_name}}</h2>
- {{recipe.recipe_name}}
- {{recipe.recipe_description}}
+</div>
+
+<img class="recipe-img" src="{{recipe.img_url}}" alt="recipe photo">
+
+<div class="description">
+    <h6>{{recipe.recipe_description}}</h6>
+</div>
+
+
+
+<div class="ingredients">
+<h3> Ingredients </h3>
+<ul>
+   {% for line in recipe.ingredients.splitlines() %}
+        <li class="ingredient">
+            <p>{{line}}</p>
+        </li>
+        {% endfor %}
+</ul>
+</div>
+
+<div class="row instructions">
+<h4> Instructions </h4>
+<h6>{{recipe.how_to}}</h6>
+</div>
+
+
+ 
 
 {% endblock %}
