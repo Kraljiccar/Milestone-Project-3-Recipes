@@ -5,7 +5,70 @@ body{
     
 }
 
+/* Bootstrapp overwrite*/
+.navbar-custom {
+    background-color: black !important;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,.8) !important;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5) !important;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff !important;
+}
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+
+
+
+
 .recipe-headline{
-    text-align: center;
+    text-align: center;  
+}
+.recipe-headline h1 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 4rem;
+    color: rgb(14, 14, 14);
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+.underline{
+border-bottom: 3px dotted rgb(0, 0, 0);
+width: 100%;
+display: block;
+}
+
+.category-link{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color:rgb(0, 0, 0);
+    font-size: 2rem;
+}
+
+.category-link:hover{
+    color: rgb(0, 0, 0);
+}
+
+.carousel-item{
+    padding: 60px;
+    position: relative;
     
+}
+
+.carousel-inner> .carousel-item > img {
+    width: 500px;
+    height: 500px;
 }
