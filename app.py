@@ -31,7 +31,7 @@ def get_all(category):
     else:
         category == "all"
         recipes = mongo.db.recipe.find()
-    return render_template ("recipes.html", recipes=recipes)
+    return render_template ("recipes.html", recipes=recipes, page_title=category)
 
 @app.route('/recipe/<recipe_id>')
 def get_recipe(recipe_id):
@@ -50,6 +50,25 @@ def insert_recipe():
     recipe.insert_one(request.form.to_dict())
     return render_template("index.html")
 
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('edit_recipe.html', recipe=recipe, page_title="Edit Recipe")
+
+@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+def update_recipe(recipe_id):
+    recipe = mongo.db.recipe
+    recipe.update({"_id": ObjectId(recipe_id)},
+    {
+        'recipe_name':request.form.get('recipe_name'),
+        'category_name' :request.form.get('category_name'),
+        'recipe_decription' :request.form.get('recipe_description'),
+        'ingredients':request.form.get('ingredients'),
+        'preparation_time':request.form.get('preparation_time'),
+        'how_to':request.form.get('how_to'),
+        'img_url':request.form.get('img_url')
+    })
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
