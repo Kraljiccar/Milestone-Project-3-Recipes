@@ -70,6 +70,11 @@ def update_recipe(recipe_id):
     })
     return render_template('index.html')
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
+    return render_template('index.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
