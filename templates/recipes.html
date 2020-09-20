@@ -6,11 +6,10 @@
            
         {% for recipe in recipes %}
         
-    <div >
-      <div class="card">
-        <div class="card-image">
+    <div class="row" >
+      <div class="col-4">
         <a href="{{url_for('get_recipe', recipe_id=recipe._id)}}">
-          <img src="{{recipe.img_url}}">
+          <img class=recipeimg src="{{recipe.img_url}}">
         </div>
         
         <div class="card-content">
