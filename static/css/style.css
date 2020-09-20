@@ -2,12 +2,19 @@
 
 body{
     font-family: 'PT Serif', serif;
-     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vh;
+    margin: 0;
+    height: 100%;
+    
 }
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+#content-wrap {
+  padding-bottom: 130px;    /* Footer height */
+}
 /* Bootstrapp overwrite*/
 .navbar-custom {
     background-color: black !important;
@@ -48,6 +55,8 @@ body{
 
 }
 
+
+
 .underline{
 border-bottom: 3px dotted rgb(0, 0, 0);
 width: 100%;
@@ -79,13 +88,19 @@ display: block;
 /* Footer */
 
 .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background: rgb(0, 0, 0);
     color:#ffffff;
     height: 130px;
-    position: relative;
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 
 .social-links li {
+    margin-top: 10px;
     display: inline;
     padding: 20px;
     font-size: 150%;
@@ -101,7 +116,10 @@ display: block;
     font-size: 55px;
 }
 
-.footer .footer-bottom {
+.footer-bottom{
+    position: absolute;
+}
+.footer .footer-bottom {;
     color: #cccccc;
     text-align: center;
     position: absolute;
@@ -109,5 +127,40 @@ display: block;
     left: 0px;
     width: 100%;
     height: 30px;  
+}
+
+/*view recipe */
+
+.recipe-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .recipe-img {
+        min-height: 80vh;
+        max-height: 100vh;
+        max-width: 80vw;
+        width: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .recipe-img {
+        max-width: 80vw;
+        height: auto;
+        display: block;
+    }
+}
+
+.recipe-headline h2 {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(14, 14, 14);
+    margin-top: 50px;
+    margin-bottom: 20px;
+
 }
 
