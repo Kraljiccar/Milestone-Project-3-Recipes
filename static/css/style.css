@@ -14,10 +14,13 @@ body{
 }
 #content-wrap {
   padding-bottom: 130px;    /* Footer height */
+  margin: 0px;
 }
 /* Bootstrapp overwrite*/
 .navbar-custom {
     background-color: black !important;
+    width: 100%;
+    margin: 0;
 }
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
@@ -34,13 +37,9 @@ body{
     color: #ffffff !important;
 }
 
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover.dropdown-menu {
   display: block;
 }
-
-
-
-
 
 .recipe-headline{
     text-align: center;  
@@ -154,22 +153,54 @@ display: block;
     }
 }
 
+
+/* Recipes page */
+
 .recipe-headline h2 {
+
+    font-family: linotype-didot-headline, serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 3rem;
     color: rgb(14, 14, 14);
     margin-top: 50px;
     margin-bottom: 20px;
-    
 
 }
 
-.recipes{
-    padding-top: 20px;
-    justify-content: center;
-}
-.recipeimg{
-    width: 100%;
+.image-wrapper {
+    width: 300px;
     height: 300px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    padding: 5px; 
+
 }
+
+.image-wrapper img {
+    object-fit: cover;
+    flex: 1;
+    height: 100%;
+    width: auto;
+}
+
+.image-wrapper:hover {
+    box-shadow: 0 0 2px 2px #3d3d5c;
+  }
+
+.entry-data {
+    display: inline;
+    color: #474747;
+    text-align: left;
+}
+
+.item-title{
+    color: black !important;
+    font-family: New Century Schoolbook, serif;
+}
+
+
