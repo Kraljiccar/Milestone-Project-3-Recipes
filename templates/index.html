@@ -3,20 +3,22 @@
 
 <div class="recipe-headline">
 <h1>SERBIAN KITCHEN</h1>
+<h5>Here you can find recipes of most famouse Serbian food, or some other food made with serbian style and passion in kitchen.
+ Feel free to add your own recipes and shere it with the rest of the world!!</h5>
 </div>
 <span class="underline"></span>
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center text-center bg-light">
        <a class="category-link" href="{{ url_for('get_all', category='appetizers') }}">Appetizers</a>
     </div>
-    <div class="col-sm">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center text-center bg-light">
       <a class="category-link" href="{{ url_for('get_all', category='main') }}">Main</a>
     </div>
-    <div class="col-sm">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center text-center bg-light">
       <a class="category-link" href="{{ url_for('get_all', category='desserts') }}">Desserts</a>
     </div>
-    <div class="col-sm">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 d-flex justify-content-center text-center bg-light">
       <a class="category-link" href="{{ url_for('get_all', category='all') }}">All Recipes</a>
     </div>
   </div>
