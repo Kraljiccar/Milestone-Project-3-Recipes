@@ -18,7 +18,7 @@ body{
 }
 /* Bootstrapp overwrite*/
 .navbar-custom {
-    background-color: black !important;
+    background-color: #ffbf80 !important;
     width: 100%;
     margin: 0;
 }
@@ -34,11 +34,19 @@ body{
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #ffffff !important;
+    color: #1a0d00 !important;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 
 .dropdown:hover.dropdown-menu {
   display: block;
+}
+
+.nav-img{
+    height:30px;
+    width:50px;
 }
 
 .recipe-headline{
