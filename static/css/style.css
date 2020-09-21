@@ -161,10 +161,15 @@ display: block;
     color: rgb(14, 14, 14);
     margin-top: 50px;
     margin-bottom: 20px;
+    
 
 }
 
+.recipes{
+    padding-top: 20px;
+    justify-content: center;
+}
 .recipeimg{
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 300px;
 }
