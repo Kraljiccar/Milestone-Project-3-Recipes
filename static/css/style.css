@@ -13,7 +13,7 @@ body{
   min-height: 100vh;
 }
 #content-wrap {
-  padding-bottom: 100px;    /* Footer height */
+  padding-bottom: 150px;    /* Footer height */
   margin: 0px;
 }
 /* Bootstrapp overwrite*/
@@ -150,8 +150,10 @@ display: block;
 }
 
 
-/* Add Edit recipe*/
-
+/*  Edit recipe*/
+.deletebutton {
+    padding-top: 20px;
+}
 
 /*view recipe */
 .description{
@@ -192,10 +194,6 @@ display: block;
     font-family: linotype-didot, serif;
 }
 
-.recimg{
-    justify-content: center;
-    width:400px;
-    height:300px;
 }
 .recipe-img {
     margin-left: auto;

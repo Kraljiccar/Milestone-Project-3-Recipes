@@ -2,7 +2,7 @@
 {% block content %} 
 <div class="recipe-headline">
 <h2> {{page_title}} </h2>
-</div class="container">
+</div class="container addrecipe">
 <form method="POST" action="{{ url_for('insert_recipe')}}">
     <div class="form-group">
         <label for="recipe_name">Recipe Name</label>
@@ -62,8 +62,7 @@
         <small type="url" class="form-text text-muted">Picture of the dish. Use a valid URL</small>
     </div>
 
-      <button type="submit" class="btn btn-success">Add Recipe</button>
-<br>
+      <button type="submit" class="btn btn-success btn-lg btn-block">Add Recipe</button>
 </form>
 </div>
 {% endblock %}

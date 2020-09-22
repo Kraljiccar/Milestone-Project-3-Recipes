@@ -36,13 +36,14 @@
             </div>
         </div>
     </div>
-
-    <div class="col-sm-12 col-md-6">
+    <div class="row align-self-start">
+    <div class="col-sm-12 col-md-6 align-self-start">
             <div class="form-group">
                 <label for="preparation_time">Preparation Time</label>
                 <input required value="{{recipe.preparation_time}}" type="text" class="form-control" id="preparation_time" name="preparation_time" aria-describedby="preparation time" placeholder="X,X hours" maxlength="20">
                 <small class="form-text text-muted">exmple: 2,5 hours</small>
             </div>
+    </div>
     </div>
     
      <div class="form-group">
@@ -61,9 +62,10 @@
         <small type="url" class="form-text text-muted">Picture of the dish. Use a valid URL</small>
     </div>
 
-      <button type="submit" class="btn btn-success">Submit recipe changes</button>
-
-
+      <button type="submit" class="btn btn-secondary btn-lg btn-block">Submit recipe changes</button>
 </form>
+<div class="deletebutton">
+    <a type="button" href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="btn btn-danger btn-lg btn-block">Delete Recipe</a>
+</div>
 </div>
 {% endblock %}
