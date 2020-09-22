@@ -11,22 +11,26 @@
     <h6>{{recipe.recipe_description}}</h6>
 </div>
 
-
+<div class="time">
+<h4><i class="far fa-clock"></i>Cooking time:{{recipe.preparation_time}} hours</h4>
+</div>
 
 <div class="ingredients">
-<h3> Ingredients </h3>
+<h3> Ingredients: </h3>
 <ul>
    {% for line in recipe.ingredients.splitlines() %}
         <li class="ingredient">
-            <p>{{line}}</p>
+            <h5>{{line}}</h5>
         </li>
         {% endfor %}
 </ul>
 </div>
 
+
+
 <div class="row instructions">
-<h4> Instructions </h4>
-<h6>{{recipe.how_to}}</h6>
+<h3> Instructions </h3>
+<h5>{{recipe.how_to}}</h5>
 </div>
 
 

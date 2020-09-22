@@ -149,12 +149,59 @@ display: block;
     height: 30px; 
 }
 
-/*view recipe */
 
+/* Add Edit recipe*/
+
+
+/*view recipe */
+.description{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.description h6 {
+    font-family: Verdana, sans-serif;
+}
+
+.ingredients h3{
+    font-family: Verdana, sans-serif;
+    font-weight: 800;
+}
+
+.time{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.time h4{
+    font-family: Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.instructions {
+    padding-top: 15px;
+}
+.instructions h3{
+    font-family: Verdana, sans-serif;
+    font-weight: 800;
+}
+
+.instructions{
+    padding-bottom: 50px;
+}
+.instructions h5{
+    font-family: linotype-didot, serif;
+}
+
+.recimg{
+    justify-content: center;
+    width:400px;
+    height:300px;
+}
 .recipe-img {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    
 }
 
 @media (min-width: 768px) {
