@@ -86,24 +86,26 @@ display: block;
     
 }
 
-.row.category-link{
-    justify-content: center;
-}
-
 .category-link:hover{
     color: rgb(0, 0, 0);
 }
 
-.carousel-item{
-    padding: 60px;
-    position: relative;
+.slide-images{
+    margin-top: 40px;
+    margin-bottom: 60px;
+    justify-content:center;
     
 }
 
-.carousel-inner .carousel-item  img {
-    width: 500px;
-    height: 500px;
+.carousel{
+    border: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px;
+    background: cover;
 }
+.carousel-inner .carousel-item img {
+     width:640px;
+     height:360px; }
 
 /* Footer */
 
