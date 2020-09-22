@@ -68,12 +68,12 @@ def update_recipe(recipe_id):
         'how_to':request.form.get('how_to'),
         'img_url':request.form.get('img_url')
     })
-    return render_template('index.html')
+    return render_template('index.html', recipe=recipe)
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
     mongo.db.recipe.remove({'_id': ObjectId(recipe_id)})
-    return render_template('index.html')
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
