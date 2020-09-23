@@ -1,39 +1,113 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+## Data Centric Development Milestone Project 
+# Serbian Kitchen
 
-Welcome Kraljiccar,
+Serbian kitchen is online cookbook where users can browse, add, edit or delete recipes. Clean and simple, recipes are menages by 3 categories, appetizers, main food and desserts.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+<img src="https://github.com/Kraljiccar/Milestone-Project-3-Recipes/blob/master/static/imgs/sk.png?raw=true" margin="0">
 
-## Gitpod Reminders
+[Deployed link here](https://milestone-project-3-recipes.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## UI/UX
 
-`python3 -m http.server`
+### Project goals
+Serbian Kitchen is milestone project for Code Institute Data Centric Development module. The goal of this project is to create, store, edit and delete recipes (CRUD).
+Target audience for this project is people that are simply interested in Serbian/Balkan cooking. My goal was to create online cookbook without any unnecesarry long
+descriptions - only straight-to-the-point recipes.
 
-A blue button should appear to click: *Make Public*,
+### Developer goals
+* Provide a simple, easy to use online cookbook where user can browse, post, edit and delete recipes, filter them by categories.
+* By practice Python and non-relational database MongoDb.
+* Improve Bootstrap knowledge.
+* Learn to use Heroku Pages
 
-Another blue button should appear to click: *Open Browser*.
+### Design
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Main inspiration for Serbian Kitchen is my origin, because i miss that original food, since i live i Sweden, where the food is not so tasty.
 
-A blue button should appear to click: *Make Public*,
+I chose to override all B4 round corners on images, forms and buttons to suit my design. I choose white background color because the colors of recipe images are very colorfull and all over the spectrum.
 
-Another blue button should appear to click: *Open Browser*.
+To build the design of the page I used Bootstrap 4, FontAwesome.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+Actualy i haven't done much browsing, made a site totally out of my head to be ass simple ass posible. After a googleing, i have realised that there is no Serbian Kitchen website. 
 
-## Updates Since The Instructional Video
+During development i tried to simplified site ass much ass possible. 
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+### Wireframes 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<img src="https://github.com/Kraljiccar/Milestone-Project-3-Recipes/blob/master/static/imgs/allrecipes.png?raw=true" margin="0">
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Features
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Existing features
+* Sorting by category by clicking navigation links.
+* Index page contains pleasent photos sorted in carousel.
+* Social icons with links in the page footer
+* Bootstrap input field validation
+* Recipes displayed in list have title, description, cooking time and user information
+* Create, read, update, delete recipe (CRUD)
+* Carousel
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Future features
+* Search: users are able to search for recipes by username, title or any other text. If no results are found message "No results found. Please try again".
+* Sign Up
+* Login
+* Google login
+* "Remember me" signup checkbox
+* Recipe image url validation
+* More categories
+* Admin console
+* Admin able to add/edit/delete categories
+* Recipe Comments
 
---------
+### Information Architecture
+MongoDB Atlas is used for storing data for this web site.
 
-Happy coding!
+| categories            | recipe        | 
+| --------------------- |:-------------:|
+| category_name: string | recipe_name: string |
+|                       | category_name: string |
+|                       | recipe_description : string |
+|                       | ingredients: string |
+|                       | preparation_time: string |
+|                       | how_to: string |
+|                       | img_url: string |
+
+For the needs of this website I did not find the need to use other data types in MongoDB. In a real world application I would add image file uploads, dynamic input fields and rich text editing.
+
+### Technologies used
+* HTML5
+* CSS3
+* jQuery
+* Python 3.8.2 (flask)
+* MongoDB
+* Bootstrap CDN
+* Git & GitHub.com
+* Heroku.com pages
+* FontAwesome.com
+* Google Fonts
+* Google Chrome Developer tools
+
+### Manuel Testing  
+I extensively tested the page on laptop, mobile and iPad Pro 13" tablet after every major development test. 
+
+### Heroku
+Heroku was chosen as the deployment platform for this project. The steps to deploy the local app to Heroku were as follow:
+In Heroku, create an app. The app must have a unique name.
+Link that app to the GitHub repository by going to the "Deploy" tab in the main app menu.
+In the Settings tab, add the corresponding Config Variables as present in local development:
+1. MONGO_URI mongodb+srv://...
+2. IP 0.0.0.0
+3. PORT 5000
+4. SECRET_KEY
+Created "Procfile" by typing:
+5. $ echo web: python app.py > Procfile
+Push repo to Heroku
+6. $ git push heroku master
+
+## Credits
+### Code
+* Code Intitute
+### Images
+* [Pixabay] (https://pixabay.com/sv/)
+### Content
+* Recipes taken from various websites.
